@@ -1,0 +1,93 @@
+{% macro list_pages(pages) %}
+  {% for page in pages %}
+    <div class="post on-list">
+      <h1 class="post-title">
+        <a href="{{ page.permalink }}">{{ page.title | safe }}</a>
+      </h1>
+      <div class="post-meta">
+        {% if page.date %}
+          <span class="post-date">
+            {{ page.date | date(format="%Y-%m-%d") }}
+          </span>
+          {% if page.updated %}
+            <span class="post-moddate">
+              (updated on {{ page.updated | date(format="%Y-%m-%d") }})
+            </span>
+          {% endif %}
+        {% endif %}
+
+        {% if page.author %}
+          <span class="post-author">— Written by {{ page.author }}</span>
+        {% elif config.extra.author %}
+          <span class="post-author">— Written by {{ config.extra.author }}</span>
+        {% endif %}
+
+        {% if page.reading_time %}
+          <span class="post-read-time">
+            — {{ page.reading_time }}min read
+          </span>
+        {% endif %}
+      </div>
+
+      {% if config.taxonomies %}
+        {% if page.taxonomies.tags %}
+          <span class="post-tags">
+            {% for tag in page.taxonomies.tags %}
+              #<a href="{{ get_taxonomy_url(kind="tags", name=tag) }}">{{ tag }}</a>&nbsp;
+            {% endfor %}
+          </span>
+        {% endif %}
+      {% endif %}
+
+      <div class="post-content">
+        {% if page.description %}
+          {{ page.description | safe }}
+        {% elif page.summary %}
+          {{ page.summary | safe }}
+        {% endif %}
+      </div>
+      <div><a class="read-more button" href="{{ page.permalink }}">Read more →</a></div>
+    </div>
+  {% endfor %}
+{% endmacro list_pages %}
+
+{% macro paginate(paginator) %}
+  {% if paginator.pages %}
+    <div class="pagination">
+      <div class="pagination__buttons">
+        {% if paginator.previous %}
+          <span class="button previous">
+            <a href="{{ paginator.previous }}">
+              <span class="button__icon">←</span>
+              <span class="button__text">Newer posts</span>
+            </a>
+          </span>
+        {% endif %}
+        {% if paginator.next %}
+          <span class="button next">
+            <a href="{{ paginator.next }}">
+              <span class="button__text">Older posts</span>
+              <span class="button__icon">→</span>
+            </a>
+          </span>
+        {% endif %}
+      </div>
+    </div>
+  {% endif %}
+{% endmacro %}
+
+{% macro logo() %}
+  <a href="{{ get_url(path="/") }}" class="logo" style="text-decoration: none;">
+    <span class="logo__mark">
+      <svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+        <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+      </svg>
+    </span>
+    <span class="logo__text">{{ config.title }}</span>
+    {% if config.extra.hello_friend_cursor_color %}
+      <span class="logo__cursor" style="background: {{ config.extra.hello_friend_cursor_color }};"></span>
+    {% else %}
+      <span class="logo__cursor"></span>
+    {% endif %}
+  </a>
+{% endmacro logo %}

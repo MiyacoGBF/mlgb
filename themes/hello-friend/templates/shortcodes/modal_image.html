@@ -1,0 +1,18 @@
+{% if not width %}
+  {% set width = "100%" %}
+{% endif %}
+
+{% set url = get_url(path=path) %}
+
+<a href="#{{ id }}">
+  <img src="{{ url }}" width="{{ width }}" />
+</a>
+<div class="modal-wrapper" id="{{ id }}">
+  <a href="#!" class="modal-overlay"></a>
+  <div class="modal-window">
+    <div class="modal-content">
+      <img src="{{ url }}" width="100%" />
+    </div>
+    <a href="#!" class="modal-close">×</a>
+  </div>
+</div>

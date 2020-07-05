@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="post">
+    <h1 class="post-title">
+      <a href="{{ page.permalink }}">
+        {{ page.title | safe }}
+      </a>
+    </h1>
+
+    <div class="post-meta">
+      {% if page.date %}
+        <span class="post-date">
+          {{ page.date | date(format="%Y-%m-%d") }}
+        </span>
+        {% if page.updated %}
+          <span class="post-moddate">
+            (updated on {{ page.updated | date(format="%Y-%m-%d") }})
+          </span>
+        {% endif %}
+      {% endif %}
+
+      {% if page.author %}
+        <span class="post-author">
+          — Written by {{ page.author }}
+        </span>
+      {% elif config.extra.author %}
+        <span class="post-author">
+          — Written by {{ config.extra.author }}
+        </span>
+      {% endif %}
+
+      {# reading_time #}
+    </div>
+
+    {% if config.taxonomies %}
+      {% if page.taxonomies.tags %}
+        <span class="post-tags">
+          {% for tag in page.taxonomies.tags %}
+            #<a href="{{ get_taxonomy_url(kind="tags", name=tag) }}">{{ tag }}</a>
+          {% endfor %}
+        </span>
+      {% endif %}
+    {% endif %}
+
+    <div class="post-content">
+      {% if page.toc %}
+        <h2>Table of Contents</h2>
+        <aside class="table-of-contents">
+          <ul>
+            {% for h1 in page.toc %}
+              <li>
+                <a href="{{ h1.permalink | safe }}">{{ h1.title }}</a>
+                {% if h1.children %}
+                  <ul>
+                    {% for h2 in h1.children %}
+                      <li>
+                        <a href="{{ h2.permalink | safe }}">{{ h2.title }}</a>
+                      </li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+        </aside>
+      {% endif %}
+      {{ page.content | safe }}
+    </div>
+
+    {# next/prev pages in section #}
+    {% if page.earlier or page.later %}
+      <div class="pagination">
+        <div class="pagination__title">
+          <span class="pagination__title-h">
+            Read other posts
+          </span>
+          <hr />
+        </div>
+        <div class="pagination__buttons">
+          {% if page.later %}
+            <span class="button previous">
+              <a href="{{ page.later.permalink }}">
+                <span class="pagination__icon">←</span>
+                <span class="pagination__text">
+                  {% if page.later.title %}
+                    {{ page.later.title }}
+                  {% endif %}
+                </span>
+              </a>
+            </span>
+          {% endif %}
+          {% if page.earlier %}
+            <span class="button next">
+              <a href="{{ page.earlier.permalink }}">
+                <span class="pagination__text">
+                  {% if page.earlier.title %}
+                    {{ page.earlier.title }}
+                  {% endif %}
+                </span>
+                <span class="pagination__icon">→</span>
+              </a>
+            </span>
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
+
+    {% block comments %}
+      {% if config.extra.hello_friend_comment_code %}
+        <div class="pagination">
+          <div class="pagination__title">
+            <span class="pagination__title-h">
+              Comments
+            </span>
+            <hr />
+          </div>
+        </div>
+        {{ config.extra.hello_friend_comment_code | safe }}
+      {% endif %}
+    {% endblock %}
+
+  </div>
+{% endblock %}

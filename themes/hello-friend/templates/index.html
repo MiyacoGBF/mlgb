@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="posts">
+    {% if section.pages %}
+      {{ macros::list_pages(pages=section.pages) }}
+    {% elif paginator.pages %}
+      {{ macros::list_pages(pages=paginator.pages) }}
+    {% endif %}
+
+    {% if paginator.pages %}
+      {{ macros::paginate(paginator=paginator) }}
+    {% endif %}
+
+  </div>
+{% endblock %}

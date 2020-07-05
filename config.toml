@@ -1,0 +1,70 @@
+### Blog setup ###
+# The URL the site will be built for
+base_url = "https://MiyacoGBF.github.io/mlgb"
+title = "Miyaco's Linux Gaming Blog"
+description = "Try Gaming on Linux"
+
+# Whether to automatically compile all Sass files in the sass directory
+compile_sass = true
+
+# Whether to do syntax highlighting
+# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
+highlight_code = true
+
+# Whether to build a search index to be used later on by a JavaScript library
+build_search_index = false
+
+taxonomies = [
+  {name = "tags", paginate_by = 5},
+]
+
+# theme
+theme = "hello-friend"
+
+[extra]
+# Put all your custom variables here
+author = "Miyaco"
+
+# hello-friend
+hello_friend_menu = [
+  {url = "$BASE_URL", name = "Home"},
+  {url = "$BASE_URL/about", name = "About"},
+  {url = "$BASE_URL/tags", name = "Tags"},
+  {url = "$BASE_URL/contact", name = "Contact"},
+]
+hello_friend_cursor_color = "#a9a9b3"
+
+hello_friend_analytics_code = """
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-171597004-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-171597004-1');
+</script>
+"""
+
+hello_friend_comment_code = """
+<div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://miyacos-linux-gaming-blog.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+"""

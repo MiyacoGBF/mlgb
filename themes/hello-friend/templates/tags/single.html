@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}
+  {{ config.title }} - Articles in {{ term.name }} tag
+{% endblock %}
+
+{% block content %}
+  <div class="posts">
+    {% if paginator.pages %}
+      {{ macros::list_pages(pages=paginator.pages) }}
+      {{ macros::paginate(paginator=paginator) }}
+    {% elif term.pages %}
+      {{ macros::list_pages(pages=term.pages) }}
+      {{ macros::paginate(paginator=term) }}
+    {% endif %}
+  </div>
+{% endblock %}
