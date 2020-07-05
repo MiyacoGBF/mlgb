@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-171597004-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-171597004-1');
+</script>
+
+    
+
+    <meta charset="utf-8">
+
+    <title>
+      
+        
+          How to Install FAR, HD Texture Pack, and ReShade (GShade) for NieR:Automata on Linux :: Miyaco&#x27;s Linux Gaming Blog
+        
+      
+    </title>
+
+    
+      
+    
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+    <link rel="stylesheet" href="https:&#x2F;&#x2F;MiyacoGBF.github.io&#x2F;mlgb&#x2F;css&#x2F;style.css">
+
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https:&#x2F;&#x2F;MiyacoGBF.github.io&#x2F;mlgb&#x2F;img&#x2F;apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="https:&#x2F;&#x2F;MiyacoGBF.github.io&#x2F;mlgb&#x2F;img&#x2F;favicon.png">
+  </head>
+
+  <body class="dark-theme">
+    <div class="container">
+      
+      <header class="header">
+        <span class="header__inner">
+          
+  <a href="https:&#x2F;&#x2F;MiyacoGBF.github.io&#x2F;mlgb" class="logo" style="text-decoration: none;">
+    <span class="logo__mark">
+      <svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+        <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+      </svg>
+    </span>
+    <span class="logo__text">Miyaco&#x27;s Linux Gaming Blog</span>
+    
+      <span class="logo__cursor" style="background: #a9a9b3;"></span>
+    
+  </a>
+
+          <span class="header__right">
+            
+              <nav class="menu">
+                <ul class="menu__inner menu__inner--desktop">
+                  
+                    <li><a href="https:&#x2F;&#x2F;MiyacoGBF.github.io&#x2F;mlgb">Home</a></li>
+                  
+                    <li><a href="https:&#x2F;&#x2F;MiyacoGBF.github.io&#x2F;mlgb&#x2F;about">About</a></li>
+                  
+                    <li><a href="https:&#x2F;&#x2F;MiyacoGBF.github.io&#x2F;mlgb&#x2F;tags">Tags</a></li>
+                  
+                    <li><a href="https:&#x2F;&#x2F;MiyacoGBF.github.io&#x2F;mlgb&#x2F;contact">Contact</a></li>
+                  
+                </ul>
+
+                <ul class="menu__inner menu__inner--mobile">
+                  
+                    <li><a href="https:&#x2F;&#x2F;MiyacoGBF.github.io&#x2F;mlgb">Home</a></li>
+                  
+                    <li><a href="https:&#x2F;&#x2F;MiyacoGBF.github.io&#x2F;mlgb&#x2F;about">About</a></li>
+                  
+                    <li><a href="https:&#x2F;&#x2F;MiyacoGBF.github.io&#x2F;mlgb&#x2F;tags">Tags</a></li>
+                  
+                    <li><a href="https:&#x2F;&#x2F;MiyacoGBF.github.io&#x2F;mlgb&#x2F;contact">Contact</a></li>
+                  
+                </ul>
+              </nav>
+
+              <span class="menu-trigger">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M0 0h24v24H0z" fill="none"/>
+                  <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                </svg>
+              </span>
+            
+            <span class="theme-toggle">
+              <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+                3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+                13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+              </svg>
+            </span>
+          </span>
+        </span>
+      </header>
+
+      
+      <div class="content">
+        
+  <div class="post">
+    <h1 class="post-title">
+      <a href="https:&#x2F;&#x2F;MiyacoGBF.github.io&#x2F;mlgb&#x2F;nier-automata-far&#x2F;">
+        How to Install FAR, HD Texture Pack, and ReShade (GShade) for NieR:Automata on Linux
+      </a>
+    </h1>
+
+    <div class="post-meta">
+      
+        <span class="post-date">
+          2020-02-09
+        </span>
+        
+          <span class="post-moddate">
+            (updated on 2020-07-04)
+          </span>
+        
+      
+
+      
+        <span class="post-author">
+          — Written by Miyaco
+        </span>
+      
+
+      
+    </div>
+
+    
+      
+        <span class="post-tags">
+          
+            #<a href="https:&#x2F;&#x2F;MiyacoGBF.github.io&#x2F;mlgb&#x2F;tags&#x2F;mod&#x2F;">mod</a>
+          
+            #<a href="https:&#x2F;&#x2F;MiyacoGBF.github.io&#x2F;mlgb&#x2F;tags&#x2F;specialk&#x2F;">specialk</a>
+          
+            #<a href="https:&#x2F;&#x2F;MiyacoGBF.github.io&#x2F;mlgb&#x2F;tags&#x2F;nier-automata&#x2F;">nier_automata</a>
+          
+        </span>
+      
+    
+
+    <div class="post-content">
+      
+        <h2>Table of Contents</h2>
+        <aside class="table-of-contents">
+          <ul>
+            
+              <li>
+                <a href="https://MiyacoGBF.github.io/mlgb/nier-automata-far/#about">About</a>
+                
+                  <ul>
+                    
+                      <li>
+                        <a href="https://MiyacoGBF.github.io/mlgb/nier-automata-far/#links">Links</a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+              <li>
+                <a href="https://MiyacoGBF.github.io/mlgb/nier-automata-far/#screenshot">Screenshot</a>
+                
+              </li>
+            
+              <li>
+                <a href="https://MiyacoGBF.github.io/mlgb/nier-automata-far/#disclaimer">Disclaimer</a>
+                
+              </li>
+            
+              <li>
+                <a href="https://MiyacoGBF.github.io/mlgb/nier-automata-far/#motivations-why-i-want-to-use-far-on-linux">Motivations (why I want to use FAR on Linux)</a>
+                
+              </li>
+            
+              <li>
+                <a href="https://MiyacoGBF.github.io/mlgb/nier-automata-far/#system">System</a>
+                
+              </li>
+            
+              <li>
+                <a href="https://MiyacoGBF.github.io/mlgb/nier-automata-far/#prerequisites">Prerequisites</a>
+                
+              </li>
+            
+              <li>
+                <a href="https://MiyacoGBF.github.io/mlgb/nier-automata-far/#far-fix-nier-automata-resolution">FAR - Fix (NieR) Automata Resolution</a>
+                
+                  <ul>
+                    
+                      <li>
+                        <a href="https://MiyacoGBF.github.io/mlgb/nier-automata-far/#install">Install</a>
+                      </li>
+                    
+                      <li>
+                        <a href="https://MiyacoGBF.github.io/mlgb/nier-automata-far/#issues">Issues</a>
+                      </li>
+                    
+                      <li>
+                        <a href="https://MiyacoGBF.github.io/mlgb/nier-automata-far/#uninstall">Uninstall</a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+              <li>
+                <a href="https://MiyacoGBF.github.io/mlgb/nier-automata-far/#hd-texture-pack">HD Texture Pack</a>
+                
+                  <ul>
+                    
+                      <li>
+                        <a href="https://MiyacoGBF.github.io/mlgb/nier-automata-far/#install-1">Install</a>
+                      </li>
+                    
+                      <li>
+                        <a href="https://MiyacoGBF.github.io/mlgb/nier-automata-far/#uninstall-hd-texture-pack">Uninstall HD Texture Pack</a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+              <li>
+                <a href="https://MiyacoGBF.github.io/mlgb/nier-automata-far/#reshade-or-gshade-which-is-a-fork-of-reshade">ReShade (or GShade, which is a fork of ReShade)</a>
+                
+                  <ul>
+                    
+                      <li>
+                        <a href="https://MiyacoGBF.github.io/mlgb/nier-automata-far/#install-2">Install</a>
+                      </li>
+                    
+                      <li>
+                        <a href="https://MiyacoGBF.github.io/mlgb/nier-automata-far/#issues-of-gshade-reshade">Issues of Gshade&#x2F;ReShade</a>
+                      </li>
+                    
+                      <li>
+                        <a href="https://MiyacoGBF.github.io/mlgb/nier-automata-far/#uninstall-gshade-reshade">Uninstall GShade&#x2F;ReShade</a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+          </ul>
+        </aside>
+      
+      <h2 id="about">About</h2>
+<p>This guide is originally posted to <a href="https://gist.github.com/MiyacoGBF/6fd49ae4a73a9a7f4d13c488bff2da77">my gist</a>, but to create this new blog, moved from gist to this blog as the first post.
+Contents are almost same but a bit refined.
+Comments are still welcome!</p>
+<h3 id="links">Links</h3>
+<ul>
+<li><a href="https://github.com/Kaldaien/FAR">FAR (Fix (NieR) Automata Resolution)</a> -- Required by HD Texture Pack.</li>
+<li><a href="https://www.nexusmods.com/nierautomata/mods/5">HD Texture Pack</a></li>
+<li><a href="https://reshade.me/">ReShade</a></li>
+</ul>
+<span id="continue-reading"></span><h2 id="screenshot">Screenshot</h2>
+<a href="#fullscreen">
+  <img src="https:&#x2F;&#x2F;MiyacoGBF.github.io&#x2F;mlgb&#x2F;2020-02-09_NieR_Automata_FAR&#x2F;Screenshot_full.png" width="60%" />
+</a>
+<div class="modal-wrapper" id="fullscreen">
+  <a href="#!" class="modal-overlay"></a>
+  <div class="modal-window">
+    <div class="modal-content">
+      <img src="https:&#x2F;&#x2F;MiyacoGBF.github.io&#x2F;mlgb&#x2F;2020-02-09_NieR_Automata_FAR&#x2F;Screenshot_full.png" width="100%" />
+    </div>
+    <a href="#!" class="modal-close">×</a>
+  </div>
+</div>
+<h2 id="disclaimer">Disclaimer</h2>
+<p>I have not tested stabilities of them yet.
+If you want to try things written below, do it at <strong>YOUR OWN RISK</strong>.</p>
+<h2 id="motivations-why-i-want-to-use-far-on-linux">Motivations (why I want to use FAR on Linux)</h2>
+<ul>
+<li>I'm using a 144Hz monitor, so I want to unlock FPS by FAR.</li>
+<li>I want to use HD Texture Pack for better graphics, which requires FAR.</li>
+</ul>
+<h2 id="system">System</h2>
+<ul>
+<li>OS: Arch Linux</li>
+<li>Kernel: Linux 5.5.2-11-tkg-pds (fsync enabled)</li>
+<li>CPU: Intel Core i7-8700</li>
+<li>RAM: 16GB</li>
+<li>GPU: NVIDIA GeForce GTX 1060 6GB</li>
+<li>Driver: NVIDIA 440.59</li>
+</ul>
+<h2 id="prerequisites">Prerequisites</h2>
+<ol>
+<li>
+<p>Install <code>protontricks</code> to system wide (use later).</p>
+<ul>
+<li>For Arch Linux, it can install from <a href="https://aur.archlinux.org/packages/protontricks/">AUR</a>.</li>
+</ul>
+</li>
+<li>
+<p>Install tkg-version of proton into Steam. I used <code>Pronton-tkg 5.1.r9.gc26be86c</code>. See <a href="https://github.com/Tk-Glitch/PKGBUILDS">Tk-Glitch's PKGBUILD repo</a> for details. <code>proton-tkg.cfg</code> are attached to <a href="https://gist.github.com/MiyacoGBF/6fd49ae4a73a9a7f4d13c488bff2da77#file-proton-tkg-cfg">the original gist post</a>.</p>
+</li>
+<li>
+<p>On Steam client, set NieR:Automata to use proton-tkg.</p>
+</li>
+<li>
+<p>Launch NieR:Automata.</p>
+<ul>
+<li>
+<p>If this is the first time to run NieR:Automata, Steam will automatically run Windows DirectX setup and install it to the default prefix of this game.</p>
+</li>
+<li>
+<p>Otherwise, Steam will update the default prefix of this game for your proton-tkg.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Check NieR:Automata runs correctly.</p>
+</li>
+</ol>
+<p>Game directory for NieR:Automata is <code>~/.local/share/Steam/steamapps/common/NieRAutomata/</code> by default.</p>
+<p>Run <code>protontricks -s NieR</code> and check that NieR:Automata's steam app ID is <code>524220</code>.</p>
+<h2 id="far-fix-nier-automata-resolution">FAR - Fix (NieR) Automata Resolution</h2>
+<h3 id="install">Install</h3>
+<p>I tried latest version of FAR (v0.7.0.23), but it was not stable and had a performance issue. Here, I use version v0.7.0.14, which is better in performance, though have a problem on GUI menu (but have a workaround as below).</p>
+<ol>
+<li>
+<p>Configure NieR:Automata as <code>windowed mode</code>, <code>1600x900</code> resolution, and <code>VSYNC</code> to <code>OFF</code>, then close the game. I'm not sure, but these setting was worked OK anyway. Disabling <code>VSYNC</code> is mandatory to uncap FPS.</p>
+</li>
+<li>
+<p>Download FAR v0.7.0.14 (FAR_0_7_0_14.7z) from <a href="https://github.com/Kaldaien/FAR/releases">https://github.com/Kaldaien/FAR/releases</a> and extract it.</p>
+</li>
+<li>
+<p>Copy all extracted files/folders into the game directory (<code>~/.local/share/Steam/steamapps/common/NieRAutomata/</code> by default).</p>
+</li>
+<li>
+<p>Install <code>vcrun2015</code> and <code>dinput8</code> by protontricks.</p>
+<ol>
+<li>
+<p>Run <code>protontricks 524220 vcrun2015 dinput8</code> and install <code>vcrun2015</code> and <code>dinput8</code>.</p>
+</li>
+<li>
+<p>Run <code>protontricks 524220 winecfg</code> and open <code>winecfg</code>.</p>
+<ol>
+<li>
+<p>Check windows version is set to <code>Windows 10</code>.</p>
+</li>
+<li>
+<p>Go to Library tab, then set <code>dinput8</code> to <code>Native then Builtin</code>.</p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>Launch NieR:Automata. You will see FAR's OSD (if not seen, press <code>Ctrl</code> + <code>Shift</code> + <code>O</code>), but probably fail to open GUI menu (press <code>Ctrl</code> + <code>Shift</code> + <code>Backspace</code>, then game <em>crashes</em>).</p>
+</li>
+<li>
+<p>Close the game. You'll see <code>FAR.ini</code> and <code>dinput8.ini</code> are generated in the game directory.</p>
+</li>
+<li>
+<p>Edit <code>FAR.ini</code> and <code>dinput8.ini</code>. These settings uncap FPS limit in game and fix GUI menu crash (maybe).</p>
+<ol>
+<li>
+<p>In <code>FAR.ini</code>, edit <code>UncapFPS=false</code> to <code>UncapFPS=true</code>.</p>
+</li>
+<li>
+<p>In <code>dinput8.ini</code>, edit as below:</p>
+<ol>
+<li>
+<p><code>LogLevel</code> in <code>SpecialK.System</code> section to <code>2</code> to see logs on OSD.</p>
+</li>
+<li>
+<p><code>TargetFPS</code> in <code>Render.FrameRate</code> section to larger value than 60. Or set to 0 to disable FPS limitter.</p>
+</li>
+<li>
+<p><code>Silent</code> in <code>Steam.Log</code> section to <code>true</code>. (workaround for fixing GUI crash, maybe)</p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>Launch game again.
+Then in the SquareEnix logo scene you'll see FPS on OSD is higher than 60.
+And logs on top of the OSD will say <code>uncapped</code>.
+If you missed to see it in the logo scene (it's quite short), continue and load the save data.
+In the game (not menu), you'll also see uncapped FPS.
+If log is not shown on the OSD, disable and enable OSD again by pressing <code>Ctrl</code> + <code>Shift</code> + <code>O</code> twice.</p>
+</li>
+<li>
+<p>Maybe you can now open GUI menu by pressing <code>Ctrl</code> + <code>Shift</code> + <code>Backspace</code> without game crashing. Tweak FAR as you like there. Do not forget to turn off debug logging (in compatibility/debug section, set log level to 0), which has performance cost.</p>
+</li>
+</ol>
+<p>My <a href="https://gist.github.com/MiyacoGBF/6fd49ae4a73a9a7f4d13c488bff2da77#file-far-ini">FAR.ini</a> and <a href="https://gist.github.com/MiyacoGBF/6fd49ae4a73a9a7f4d13c488bff2da77#file-dinput8-ini">dinput8.ini</a> are attached to the original gist post.</p>
+<h3 id="issues">Issues</h3>
+<ul>
+<li>When moving mouse, the game stutters a bit.</li>
+</ul>
+<h3 id="uninstall">Uninstall</h3>
+<p>Rename or remove <code>dinput8.dll</code> in the game directory.</p>
+<h2 id="hd-texture-pack">HD Texture Pack</h2>
+<p>Same as Windows, no linux specific.</p>
+<h3 id="install-1">Install</h3>
+<p>FAR is required to use this pack. If you still not installed FAR, install it first.</p>
+<ol>
+<li>
+<p>Download HD Texture Pack from <a href="https://www.nexusmods.com/nierautomata/mods/5">NexusMods</a>. You need to create account and sign-in to this site.</p>
+</li>
+<li>
+<p>Extract the downloaded file and move <code>FAR_Res</code> folder to the NieR:Automata game directory (<code>~/.local/share/Steam/steamapps/common/NieRAutomata/</code> by default).</p>
+</li>
+<li>
+<p>Launch the game. You will see improved graphics.</p>
+</li>
+</ol>
+<h3 id="uninstall-hd-texture-pack">Uninstall HD Texture Pack</h3>
+<p>Rename or remove <code>FAR_Res</code> folder in the game directory.</p>
+<h2 id="reshade-or-gshade-which-is-a-fork-of-reshade">ReShade (or GShade, which is a fork of ReShade)</h2>
+<h3 id="install-2">Install</h3>
+<p>I used GShade, so in this section I write mainly about GShade, but the procedure will be almost same for ReShade. For ReShade on Linux, <a href="https://www.reddit.com/r/linux_gaming/comments/b2hi3g/reshade_working_in_wine_43/">this guild</a> would be helpful but little a bit different from my case.</p>
+<ol>
+<li>
+<p>Close NieR:Automata if it's running.</p>
+</li>
+<li>
+<p>Download and extract GShade/ReShade.</p>
+<ul>
+<li>
+<p>For GShade, go to <a href="https://gposers.com/gshade/">https://gposers.com/gshade/</a> and click <code>ZIP FILE</code> button. Then simply extract the downloaded file.</p>
+</li>
+<li>
+<p>For ReShade, go to <a href="https://reshade.me/">https://reshade.me/</a> and click <code>Download ReShade *.*.*</code> button. This link will downlaod <code>.exe</code> version, but you can simply unzip it by <code>unzip</code> command.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Manually install GShade/ReShade to NieR:Automata game directory.</p>
+<ul>
+<li>
+<p>For GSahde, copy all files/folders other than <code>d3d9.dll</code> into the game directory.</p>
+</li>
+<li>
+<p>For ReShade, copy <code>ReShade64.json</code> and <code>ReShade64.dll</code> to the game directory, then rename <code>ReShade64.dll</code> to <code>d3d11.dll</code>.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Install <code>d3dcompiler_47</code> by protontricks.</p>
+<ol>
+<li>
+<p>Run <code>protontricks 524220 d3dcompiler_47</code>. This command installs <code>d3dcompiler_47.dll</code> for the wine prefix.</p>
+</li>
+<li>
+<p>Run <code>protontricks 524220 winecfg</code>.</p>
+<ol>
+<li>
+<p>Set Windows version to <code>Windows 10</code>.</p>
+</li>
+<li>
+<p>Go to Library tab, then set <code>d3dcompiler_47</code> to <code>Native</code>, press OK.</p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>Launch NieR:Automata and press <code>Shift</code> + <code>F2</code> (or <code>Home</code> key for ReShade). If successfully installed, GShade or ReShade menu will be shown on the game. Tweak it as you like.</p>
+</li>
+</ol>
+<h3 id="issues-of-gshade-reshade">Issues of Gshade/ReShade</h3>
+<ul>
+<li>
+<p><del>I tested GShade 2.1.0 (including ReShade 4.5.3 updates) and ReShade 4.5.3, both had an issue on moving mouse. When mouse cursor is moved, the game is stuck for a couple of seconds. This issue is also shown in FFXIV (stand alone version) on my environment.</del></p>
+<ul>
+<li>NOTE: In the case of FFXIV, it seems to be <a href="https://bugs.winehq.org/show_bug.cgi?id=48726">a bug of wine-staging patch</a>.</li>
+<li><strong>UPDATE</strong> (2020-07-05): This issue seems to be fixed on recent wine/proton (tested on <code>Proton-tkg 5.11.r11.gb6c28187</code>).</li>
+</ul>
+</li>
+</ul>
+<h3 id="uninstall-gshade-reshade">Uninstall GShade/ReShade</h3>
+<p>Rename or remove <code>d3d11.dll</code> file in the game directory.</p>
+
+    </div>
+
+    
+    
+
+    
+      
+        <div class="pagination">
+          <div class="pagination__title">
+            <span class="pagination__title-h">
+              Comments
+            </span>
+            <hr />
+          </div>
+        </div>
+        <div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://miyacos-linux-gaming-blog.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+      
+    
+
+  </div>
+
+      </div>
+
+      
+      <footer class="footer">
+        <div class="footer__inner">
+          
+  <a href="https:&#x2F;&#x2F;MiyacoGBF.github.io&#x2F;mlgb" class="logo" style="text-decoration: none;">
+    <span class="logo__mark">
+      <svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+        <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+      </svg>
+    </span>
+    <span class="logo__text">Miyaco&#x27;s Linux Gaming Blog</span>
+    
+      <span class="logo__cursor" style="background: #a9a9b3;"></span>
+    
+  </a>
+
+
+          <div class="copyright">
+            <span>© Miyaco 2020, Powered by 
+              <a href="https://www.getzola.org" target="_blank" rel="noopener">Zola</a>
+            </span>
+          </div>
+        </div>
+      </footer>
+
+      <script src="https:&#x2F;&#x2F;MiyacoGBF.github.io&#x2F;mlgb&#x2F;js&#x2F;main.js"></script>
+    </div>
+  </body>
+</html>
