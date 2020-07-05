@@ -24,7 +24,7 @@ Comments are still welcome!
 
 ## Screenshot
 
-{{ modal_image(id="fullscreen", path="2020-02-09_NieR_Automata_FAR/Screenshot_full.png", width="60%") }}
+{{ modal_image(id="fullscreen", path="2020-02-09_NieR_Automata_FAR/Screenshot_full.png") }}
 
 ## Disclaimer
 
