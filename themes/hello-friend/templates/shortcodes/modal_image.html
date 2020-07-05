@@ -5,8 +5,9 @@
 {% set url = get_url(path=path) %}
 
 <a href="#{{ id }}">
-  <img src="{{ url }}" width="{{ width }}" />
+  <img src="{{ url }}" width="{{ width }}" style="margin: 0 auto;" />
 </a>
+
 <div class="modal-wrapper" id="{{ id }}">
   <a href="#!" class="modal-overlay"></a>
   <div class="modal-window">
