@@ -36,6 +36,9 @@ If you try things written below, do it at **YOUR OWN RIST**.
 * RAM: 16GB
 * GPU: NVIDIA GeForce GTX 1060 6GB
 * Graphic Driver: NVIDIA 440.66.17 (proprietary/vulkan dev)
+* DE: none
+* WM: i3-wm
+* Compositor: picom
 
 ## Prerequisites
 

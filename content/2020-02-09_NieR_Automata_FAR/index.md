@@ -2,7 +2,7 @@
 title = "How to Install FAR, HD Texture Pack, and ReShade (GShade) for NieR:Automata on Linux"
 slug = "nier-automata-far"
 date = 2020-02-09
-updated = 2020-07-04
+updated = 2020-07-05
 
 [taxonomies]
 tags = ["mod", "specialk", "nier_automata"]
@@ -44,6 +44,8 @@ If you want to try things written below, do it at **YOUR OWN RISK**.
 * RAM: 16GB
 * GPU: NVIDIA GeForce GTX 1060 6GB
 * Driver: NVIDIA 440.59
+* DE: Plasma
+* WM: KWin
 
 ## Prerequisites
 
@@ -183,7 +185,7 @@ I used GShade, so in this section I write mainly about GShade, but the procedure
 * ~~I tested GShade 2.1.0 (including ReShade 4.5.3 updates) and ReShade 4.5.3, both had an issue on moving mouse. When mouse cursor is moved, the game is stuck for a couple of seconds. This issue is also shown in FFXIV (stand alone version) on my environment.~~
 
     * NOTE: In the case of FFXIV, it seems to be [a bug of wine-staging patch](https://bugs.winehq.org/show_bug.cgi?id=48726).
-    * **UPDATE** (2020-07-05): This issue seems to be fixed on recent wine/proton (tested on `Proton-tkg 5.11.r11.gb6c28187`).
+    * **UPDATE** (2020-07-05): This issue seems to be fixed on recent wine/proton (tested on `Proton-tkg 5.11.r11.gb6c28187` and i3-wm/picom).
 
 ### Uninstall GShade/ReShade
 
