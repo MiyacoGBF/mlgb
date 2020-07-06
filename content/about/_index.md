@@ -1,7 +1,6 @@
 +++
 title = "About"
 slug = "about"
-# template = "page.html"
 render = true
 +++
 

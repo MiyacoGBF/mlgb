@@ -2,7 +2,6 @@
 title = "Contact"
 description = ""
 slug = "contact"
-# template = "page.html"
 render = true
 +++
 
