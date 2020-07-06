@@ -1,0 +1,22 @@
+@mixin menu {
+  position: absolute;
+  background: var(--header);
+  box-shadow: var(--shadow);
+  margin: 0;
+  padding: 5px;
+  list-style: none;
+  border-radius: 5px;
+  z-index: 99;
+}
+
+@mixin greater-icon($stroke-width: 3px, $width: .95rem, $height: 100%) {
+  .greater-icon {
+    width: $width;
+    height: $height;
+
+    path {
+      stroke: currentColor;
+      stroke-width: $stroke-width;
+    }
+  }
+}

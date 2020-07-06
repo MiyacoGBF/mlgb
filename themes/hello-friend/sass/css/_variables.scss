@@ -25,18 +25,6 @@ body.dark-theme {
 @custom-media --phone (width < 684px);
 @custom-media --tablet (width < 900px);
 
-@mixin greater-icon($stroke-width: 3px, $width: .95rem, $height: 100%) {
-  .greater-icon {
-    width: $width;
-    height: $height;
-
-    path {
-      stroke: currentColor;
-      stroke-width: $stroke-width;
-    }
-  }
-}
-
 /* HOW TO USE */
 
 /*@media (--phone) {*/
