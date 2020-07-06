@@ -16,7 +16,7 @@ Comments are still welcome!
 
 ### Links
 
-* [FAR (Fix (NieR) Automata Resolution)](https://github.com/Kaldaien/FAR) -- Required by HD Texture Pack.
+* [FAR (Fix (NieR) Automata Resolution)](https://github.com/Kaldaien/FAR) - Required by HD Texture Pack.
 * [HD Texture Pack](https://www.nexusmods.com/nierautomata/mods/5)
 * [ReShade](https://reshade.me/)
 
