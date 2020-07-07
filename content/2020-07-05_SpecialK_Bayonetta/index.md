@@ -125,6 +125,8 @@ I strongly recommend to use MangoHud or DXVK HUD (dxvk's builtin hud) to check g
 
 * SpecialK OSD shows higher FPS than DXVK HUD/MangoHud by twice on Bayonetta (see left-side bottom of the first screenshot). Maybe correct FPS is shown by MangoHud's or DXVK HUD's one.
 
+* Not measured precisely, but I *feel* longer loading or stuttering on scene transition than plain version on Bayonetta.
+
 
 ## Uninstall
 
