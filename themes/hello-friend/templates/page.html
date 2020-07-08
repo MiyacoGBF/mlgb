@@ -37,7 +37,7 @@
       {% if page.taxonomies.tags %}
         <span class="post-tags">
           {% for tag in page.taxonomies.tags %}
-            #<a href="{{ get_taxonomy_url(kind="tags", name=tag) }}">{{ tag }}</a>
+            #<a href="{{ get_taxonomy_url(kind="tags", name=tag) }}">{{ tag }}</a>&nbsp;
           {% endfor %}
         </span>
       {% endif %}
