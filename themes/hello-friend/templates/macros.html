@@ -16,8 +16,8 @@
           {% endif %}
         {% endif %}
 
-        {% if page.author %}
-          <span class="post-author">— Written by {{ page.author }}</span>
+        {% if page.extra.author %}
+          <span class="post-author">— Written by {{ page.extra.author }}</span>
         {% elif config.extra.author %}
           <span class="post-author">— Written by {{ config.extra.author }}</span>
         {% endif %}
