@@ -29,19 +29,9 @@
           — Written by {{ config.extra.author }}
         </span>
       {% endif %}
-
-      {# reading_time #}
     </div>
 
-    {% if config.taxonomies %}
-      {% if page.taxonomies.tags %}
-        <span class="post-tags">
-          {% for tag in page.taxonomies.tags %}
-            #<a href="{{ get_taxonomy_url(kind="tags", name=tag) }}">{{ tag }}</a>&nbsp;
-          {% endfor %}
-        </span>
-      {% endif %}
-    {% endif %}
+    {{ macros::tags(page=page) }}
 
     <div class="post-content">
       {% if page.toc %}

@@ -1,3 +1,15 @@
+{% macro tags(page) %}
+  {% if config.taxonomies %}
+    {% if page.taxonomies.tags %}
+      <span class="post-tags">
+        {% for tag in page.taxonomies.tags %}
+          #<a href="{{ get_taxonomy_url(kind="tags", name=tag) }}">{{ tag }}</a>&nbsp;
+        {% endfor %}
+      </span>
+    {% endif %}
+  {% endif %}
+{% endmacro %}
+
 {% macro list_pages(pages) %}
   {% for page in pages %}
     <div class="post on-list">
@@ -29,15 +41,7 @@
         {% endif %}
       </div>
 
-      {% if config.taxonomies %}
-        {% if page.taxonomies.tags %}
-          <span class="post-tags">
-            {% for tag in page.taxonomies.tags %}
-              #<a href="{{ get_taxonomy_url(kind="tags", name=tag) }}">{{ tag }}</a>&nbsp;
-            {% endfor %}
-          </span>
-        {% endif %}
-      {% endif %}
+      {{ self::tags(page=page) }}
 
       <div class="post-content">
         {% if page.description %}
@@ -74,7 +78,7 @@
       </div>
     </div>
   {% endif %}
-{% endmacro %}
+{% endmacro paginate %}
 
 {% macro logo() %}
   <a href="{{ get_url(path="/") }}" class="logo" style="text-decoration: none;">
