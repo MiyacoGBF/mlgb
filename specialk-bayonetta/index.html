@@ -301,7 +301,7 @@ I strongly recommend to use MangoHud or DXVK HUD (dxvk's builtin hud) to check g
 <p>Extract downloaded file and copy SpecialK64.dll and SpecialK64.pdb (for 64-bit game) or SpecialK32.dll and SpecialK32.pdb (for 32-bit game) into the game directory where <code>[game-name].exe</code> exists. The game directory is <code>~/.local/share/Steam/steamapps/common/[game-name]</code> by default.</p>
 </li>
 <li>
-<p>Rename copied dll file to <code>d3d9.dll</code> or <code>d3d11.dll</code> depending on API used by the game.</p>
+<p>Rename copied dll file to <code>d3d9.dll</code> or <code>dxgi.dll</code> depending on API used by the game.</p>
 <ul>
 <li>For example, Bayonetta is 32-bit and using DirectX9, so copy SpecialK32 files and rename <code>SpecialK32.dll</code> to <code>d3d9.dll</code>.</li>
 </ul>
@@ -310,7 +310,7 @@ I strongly recommend to use MangoHud or DXVK HUD (dxvk's builtin hud) to check g
 <p>Launch the game once. It will crash soon but necessary to auto-generate <code>.ini</code> file to configure the mod.</p>
 </li>
 <li>
-<p>Edit <code>d3d9.ini</code> or <code>d3d11.ini</code> file created in the game directory as below:</p>
+<p>Edit <code>d3d9.ini</code> or <code>dxgi.ini</code> file created in the game directory as below:</p>
 <ul>
 <li>
 <p>Under <code>[NVIDIA.API]</code> section, set <code>Disable=true</code>.</p>
@@ -400,7 +400,7 @@ I strongly recommend to use MangoHud or DXVK HUD (dxvk's builtin hud) to check g
 </li>
 </ul>
 <h2 id="uninstall">Uninstall</h2>
-<p>Remove or rename <code>d3d9.dll</code> or <code>d3d11.dll</code> file in the game directory.</p>
+<p>Remove or rename <code>d3d9.dll</code> or <code>dxgi.dll</code> file in the game directory.</p>
 
     </div>
 
