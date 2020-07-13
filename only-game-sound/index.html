@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-171597004-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-171597004-1');
+</script>
+
+
+    <meta charset="utf-8">
+
+    <title>
+      
+        
+          Streaming&#x2F;Recording Only Game Sound on Linux :: Miyaco&#x27;s Linux Gaming Blog
+        
+      
+    </title>
+
+    
+      
+    
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+    <link rel="stylesheet" href="https:&#x2F;&#x2F;MiyacoGBF.github.io&#x2F;mlgb&#x2F;css&#x2F;style.css">
+
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https:&#x2F;&#x2F;MiyacoGBF.github.io&#x2F;mlgb&#x2F;img&#x2F;apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="https:&#x2F;&#x2F;MiyacoGBF.github.io&#x2F;mlgb&#x2F;img&#x2F;favicon.png">
+
+    
+
+  </head>
+
+  <body class="dark-theme">
+    <div class="container">
+      
+      <header class="header">
+        <span class="header__inner">
+          
+  <a href="https:&#x2F;&#x2F;MiyacoGBF.github.io&#x2F;mlgb" class="logo" style="text-decoration: none;">
+    <span class="logo__mark">
+      <svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+        <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+      </svg>
+    </span>
+    <span class="logo__text">Miyaco&#x27;s Linux Gaming Blog</span>
+    
+      <span class="logo__cursor" style="background: #a9a9b3;"></span>
+    
+  </a>
+
+          <span class="header__right">
+            
+              <nav class="menu">
+                <ul class="menu__inner menu__inner--desktop">
+                  
+                    <li><a href="https:&#x2F;&#x2F;MiyacoGBF.github.io&#x2F;mlgb">Home</a></li>
+                  
+                    <li><a href="https:&#x2F;&#x2F;MiyacoGBF.github.io&#x2F;mlgb&#x2F;about">About</a></li>
+                  
+                    <li><a href="https:&#x2F;&#x2F;MiyacoGBF.github.io&#x2F;mlgb&#x2F;tags">Tags</a></li>
+                  
+                    <li><a href="https:&#x2F;&#x2F;MiyacoGBF.github.io&#x2F;mlgb&#x2F;contact">Contact</a></li>
+                  
+                </ul>
+
+                <ul class="menu__inner menu__inner--mobile">
+                  
+                    <li><a href="https:&#x2F;&#x2F;MiyacoGBF.github.io&#x2F;mlgb">Home</a></li>
+                  
+                    <li><a href="https:&#x2F;&#x2F;MiyacoGBF.github.io&#x2F;mlgb&#x2F;about">About</a></li>
+                  
+                    <li><a href="https:&#x2F;&#x2F;MiyacoGBF.github.io&#x2F;mlgb&#x2F;tags">Tags</a></li>
+                  
+                    <li><a href="https:&#x2F;&#x2F;MiyacoGBF.github.io&#x2F;mlgb&#x2F;contact">Contact</a></li>
+                  
+                </ul>
+              </nav>
+
+              <span class="menu-trigger">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M0 0h24v24H0z" fill="none"/>
+                  <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                </svg>
+              </span>
+            
+            <span class="theme-toggle">
+              <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+                3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+                13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+              </svg>
+            </span>
+          </span>
+        </span>
+      </header>
+
+      
+      <div class="content">
+        
+  <div class="post">
+    <h1 class="post-title">
+      <a href="https:&#x2F;&#x2F;MiyacoGBF.github.io&#x2F;mlgb&#x2F;only-game-sound&#x2F;">
+        Streaming/Recording Only Game Sound on Linux
+      </a>
+    </h1>
+
+    <div class="post-meta">
+      
+        <span class="post-date">
+          2020-07-11
+        </span>
+        
+      
+
+      
+        <span class="post-author">
+          — Written by Miyaco
+        </span>
+      
+    </div>
+
+    
+  
+    
+      <span class="post-tags">
+        
+          #<a href="https:&#x2F;&#x2F;MiyacoGBF.github.io&#x2F;mlgb&#x2F;tags&#x2F;pulseaudio&#x2F;">pulseaudio</a>&nbsp;
+        
+          #<a href="https:&#x2F;&#x2F;MiyacoGBF.github.io&#x2F;mlgb&#x2F;tags&#x2F;sound&#x2F;">sound</a>&nbsp;
+        
+      </span>
+    
+  
+
+
+    <div class="post-content">
+      
+        <h2>Table of Contents</h2>
+        <aside class="table-of-contents">
+          <ul>
+            
+              <li>
+                <a href="https://MiyacoGBF.github.io/mlgb/only-game-sound/#about">About</a>
+                
+              </li>
+            
+              <li>
+                <a href="https://MiyacoGBF.github.io/mlgb/only-game-sound/#introduction">Introduction</a>
+                
+                  <ul>
+                    
+                      <li>
+                        <a href="https://MiyacoGBF.github.io/mlgb/only-game-sound/#system-and-software-in-example-setup">System and Software in Example Setup</a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+              <li>
+                <a href="https://MiyacoGBF.github.io/mlgb/only-game-sound/#choosing-the-method">Choosing the Method</a>
+                
+              </li>
+            
+              <li>
+                <a href="https://MiyacoGBF.github.io/mlgb/only-game-sound/#install-pulseaudio-and-pavucontrol">Install PulseAudio and pavucontrol</a>
+                
+              </li>
+            
+              <li>
+                <a href="https://MiyacoGBF.github.io/mlgb/only-game-sound/#configure-pulseaudio">Configure PulseAudio</a>
+                
+                  <ul>
+                    
+                      <li>
+                        <a href="https://MiyacoGBF.github.io/mlgb/only-game-sound/#check-default-output-name">Check Default Output Name</a>
+                      </li>
+                    
+                      <li>
+                        <a href="https://MiyacoGBF.github.io/mlgb/only-game-sound/#configure-user-s-default-pa">Configure User&#x27;s default.pa</a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+              <li>
+                <a href="https://MiyacoGBF.github.io/mlgb/only-game-sound/#configure-the-game-output">Configure the Game Output</a>
+                
+              </li>
+            
+              <li>
+                <a href="https://MiyacoGBF.github.io/mlgb/only-game-sound/#configure-obs">Configure OBS</a>
+                
+              </li>
+            
+              <li>
+                <a href="https://MiyacoGBF.github.io/mlgb/only-game-sound/#optional-change-the-game-volume-independently">(Optional) Change the Game Volume Independently</a>
+                
+              </li>
+            
+              <li>
+                <a href="https://MiyacoGBF.github.io/mlgb/only-game-sound/#closing">Closing</a>
+                
+              </li>
+            
+              <li>
+                <a href="https://MiyacoGBF.github.io/mlgb/only-game-sound/#references">References</a>
+                
+              </li>
+            
+          </ul>
+        </aside>
+      
+      <h2 id="about">About</h2>
+<p>This is an English translation of <a href="https://miyacopl.hatenablog.com/entry/2019/06/16/182123">my Japanese blog post</a>, including some updates.</p>
+<h2 id="introduction">Introduction</h2>
+<p>When streaming or recording games, for example by <a href="https://obsproject.com/">OBS</a>, you may be listening to BGM or connecting to VC on discord (or something similar).
+In such a case, you may want to avoid BGM or VC sounds being streamed/recorded.
+In this post, I'll share the way how to configure linux sound system in such a case.</p>
+<p>The method written in this post enables the following things:</p>
+<ul>
+<li>Output game sounds to both OBS and your speaker (or headphone/headset)</li>
+<li>Independently change the volume of the game which OBS captures and which you hear</li>
+</ul>
+<span id="continue-reading"></span><h3 id="system-and-software-in-example-setup">System and Software in Example Setup</h3>
+<ul>
+<li>OS: Arch Linux</li>
+<li>Game: <a href="https://store.steampowered.com/app/524220/NieRAutomata/">NieR:Automata (Steam)</a></li>
+<li>VC: Discord (desktop app)</li>
+<li>Streaming/Recording: OBS</li>
+<li>DAC: Luxman DA-200 (connected by coaxial cable)</li>
+</ul>
+<h2 id="choosing-the-method">Choosing the Method</h2>
+<p>There are some methods to accomplish this:</p>
+<ol>
+<li>Use pulseaudio to control sound output
+<ol>
+<li>Send game sounds to a <code>null sink</code> and capture by OBS</li>
+<li>Send game sounds to a <code>combined sink</code> and capture by OBS</li>
+</ol>
+</li>
+<li>Use Jack Audio Connection Kit (<code>jack</code>) to control sound output
+<ol>
+<li>Use <code>WineASIO</code> for wine games and send game sounds to <code>jack</code></li>
+</ol>
+</li>
+</ol>
+<p>Though I have tried all above three methods, I recommend <code>1.a.</code> in terms of versatility and stability.
+In this post, I will share this method.</p>
+<h2 id="install-pulseaudio-and-pavucontrol">Install PulseAudio and pavucontrol</h2>
+<p>In recent distributions/desktop-environments, usually <code>pulseaudio</code> will be installed and enabled by default. If not, install it via your package manager.</p>
+<p><code>pavucontrol</code> is used for output control of <code>pulseaudio</code> on GUI.</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#bf616a;">sudo</span><span style="color:#c0c5ce;"> pacman</span><span style="color:#bf616a;"> -S</span><span style="color:#c0c5ce;"> pavucontrol
+</span></code></pre><h2 id="configure-pulseaudio">Configure PulseAudio</h2>
+<p>In this method, we use a <code>null sink</code> virtual output.
+This virtual output originally drops all input sounds, but which has <code>monitor</code> virtual output.
+From <code>null sink</code>'s <code>monitor</code> output, sounds can be connected to both OBS and normal output (speaker or headphone).
+In this method, we use this module/feature.</p>
+<h3 id="check-default-output-name">Check Default Output Name</h3>
+<p>At first, check the name of the default output.</p>
+<p>Run the below command in terminal:</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#bf616a;">pacmd</span><span style="color:#c0c5ce;"> list-sinks
+</span></code></pre>
+<p>This command shows all available outputs list.</p>
+<p>This is an example output of mine:</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">3 sink(s) available.
+  * index: 0
+        name: &lt;alsa_output.pci-0000_00_1f.3.iec958-stereo&gt;
+        driver: &lt;module-alsa-card.c&gt;
+        flags: HARDWARE HW_MUTE_CTRL DECIBEL_VOLUME LATENCY DYNAMIC_LATENCY
+        state: RUNNING
+
+        &lt;-- snipped --&gt;
+
+        properties:
+                alsa.resolution_bits = &quot;32&quot;
+                device.api = &quot;alsa&quot;
+                device.class = &quot;sound&quot;
+                alsa.class = &quot;generic&quot;
+                alsa.subclass = &quot;generic-mix&quot;
+                &lt;-- snipped --&gt;
+
+&lt;-- snipped --&gt;
+</span></code></pre>
+<p>There should be some lines including <code>index: &lt;number&gt;</code>, so make a note of the desired destination name from the <code>name: &lt;name&gt;</code> field just below the <code>index</code> line. In my case, it should be <code>alsa_output.pci-0000_00_1f.3.iec958-stereo</code>. You can also use index number for this purpose, but this number might be changed, so avoid it and use the name field.</p>
+<h3 id="configure-user-s-default-pa">Configure User's <code>default.pa</code></h3>
+<p><code>pulseaudio</code> has two configurations: system-wide and user-specific.
+Here, I use user-specific configuration.</p>
+<p><code>pulseaudio</code> loads configuration from <code>~/.config/pulse/default.pa</code> if exists.
+If not this file exists, make it by yourself.</p>
+<p>Make or edit <code>default.pa</code> as below:</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#65737e;"># First, load system-wide default setting
+# The path of system-wide setting file may differ from your system, please check yours
+</span><span style="color:#bf616a;">.include</span><span style="color:#c0c5ce;"> /etc/pulse/default.pa
+
+</span><span style="color:#65737e;"># Create a new `null-sink`
+# Freely choose `sink_name` field, but as it is used in the following settings, don&#39;t forget it
+</span><span style="color:#c0c5ce;">load-module module-null-sink sink_name=OBSSink
+
+</span><span style="color:#65737e;"># Make display name of the created `null-sink`
+# The first argument must be same as the above `sink_name`
+</span><span style="color:#c0c5ce;">update-sink-proplist OBSSink device.description=OBSSink
+
+</span><span style="color:#65737e;"># Enable and configure loopback module
+# This configuration sets output of the `null-sink` to your default output
+# Set `&lt;sink_name&gt;.monitor` to the source field (note: add `.monitor` to the null-sink name created above)
+# `sink` field should be the name of your default output checked above by `pacmd` command
+# `adjust_time` field should be `0` and disable it
+# Set `latency_msec` field to the lowest value, `1` (200 msec latency by default)
+# *Change `format` and `rate` field depending on your system*, or simply remove them
+</span><span style="color:#c0c5ce;">load-module module-loopback source=OBSSink.monitor sink=alsa_output.pci-0000_00_1f.3.iec958-stereo adjust_time=0 latency_msec=1 format=s24le rate=192000 channels=2
+</span></code></pre>
+<p>Then restart <code>pulseaudio</code>:</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#bf616a;">pulseaudio -k
+</span></code></pre>
+<p>Usually, by the above command, <code>pulseaudio</code> will be killed and then automatically restart, but if not restart (you can check it by opening <code>pavucontrol</code> and if it shows outputs as usual), manually restart it by the below command:</p>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#bf616a;">pulseaudio --start
+</span></code></pre>
+<p>Or, simply restart the PC.</p>
+<p>If there is no misconfiguration in the config file, <code>pulseaudio</code> will start correctly.</p>
+<p>Then check if the new <code>null-sink</code> is properly added to on <code>pavucontrol</code>.
+Open <code>pavucontrol</code> and go to &quot;Playback&quot; tab, then you'll see &quot;Loopback from Monitor of Null Output&quot; is added.
+If not shown, confirm that <code>Show:</code> field on the bottom is selected as <code>All Streams</code>.</p>
+<p>Furthermore, check output of the <code>loopback</code> is set to the default output defined in the above config file.</p>
+<p>If <code>pulseaudio</code> is configured properly, <code>pavucontrol</code>'s playback tab will look like this:</p>
+<a href="#pavucontrol_1">
+  <img src="https:&#x2F;&#x2F;MiyacoGBF.github.io&#x2F;mlgb&#x2F;2020-07-11_Only_Game_Sound&#x2F;Screenshot_pavucontrol_1.png" width="90%" style="margin: 0 auto;" />
+</a>
+<div class="modal-wrapper" id="pavucontrol_1">
+  <a href="#!" class="modal-overlay"></a>
+  <div class="modal-window">
+    <div class="modal-content">
+      <img src="https:&#x2F;&#x2F;MiyacoGBF.github.io&#x2F;mlgb&#x2F;2020-07-11_Only_Game_Sound&#x2F;Screenshot_pavucontrol_1.png" width="100%" />
+    </div>
+    <a href="#!" class="modal-close">×</a>
+  </div>
+</div>
+<h2 id="configure-the-game-output">Configure the Game Output</h2>
+<p>Then launch the game.
+In this post, use <a href="https://store.steampowered.com/app/524220/NieRAutomata/">NieR:Automata on Steam</a> as an example.</p>
+<p>After launching the game, you will see the new game output(s) on the Playback tab on <code>pavucontrol</code>.
+Next to the game name (in this case it's &quot;NieRAutomata.exe&quot;), there should be a selector of the output.
+Select the name of the <code>null sink</code> created in the above section (with the above example configuration, it should be <code>OBSSink</code>).
+If <code>pulseaudio</code> is configured properly, you should still hear the game sound after changing the game output to the <code>null sink</code>.</p>
+<a href="#pavucontrol_2">
+  <img src="https:&#x2F;&#x2F;MiyacoGBF.github.io&#x2F;mlgb&#x2F;2020-07-11_Only_Game_Sound&#x2F;Screenshot_pavucontrol_2.png" width="90%" style="margin: 0 auto;" />
+</a>
+<div class="modal-wrapper" id="pavucontrol_2">
+  <a href="#!" class="modal-overlay"></a>
+  <div class="modal-window">
+    <div class="modal-content">
+      <img src="https:&#x2F;&#x2F;MiyacoGBF.github.io&#x2F;mlgb&#x2F;2020-07-11_Only_Game_Sound&#x2F;Screenshot_pavucontrol_2.png" width="100%" />
+    </div>
+    <a href="#!" class="modal-close">×</a>
+  </div>
+</div>
+<p>Additionally, it's better to confirm here that other application's outputs are <strong>not connected</strong> to the <code>null sink</code>.
+If connected, they will be mixed into the streaming/recording.
+If you are using desktop application version of discord client, make sure it's configured to use output other than the <code>null sink</code> on its own configuration window.</p>
+<h2 id="configure-obs">Configure OBS</h2>
+<p>I skip details of the way how to capture the game on OBS since it's same as the case of Windows OS.
+Simply add &quot;Window capture&quot; in &quot;Sources&quot; and select the game window.</p>
+<p>By default, OBS captures all sounds from pulseaudio's default sink, so you need to mute this.
+In &quot;Audio Mixer&quot;, there should be &quot;Desktop Audio&quot; by default, click the speaker icon and mute it.</p>
+<p>Next, configure OBS to capture the game sound.
+From &quot;Sources&quot;, add &quot;Audio Output Capture (PulseAudio)&quot; and select &quot;Create New&quot; and add it with your preferred name.
+Then device selection window should open, select the name of <code>null sink</code> added in the above section (it's <code>OBSSink</code> in this example).
+You'll see a new sound capture in the &quot;Audio Mixer&quot; with the name you added.</p>
+<a href="#obs_mixer">
+  <img src="https:&#x2F;&#x2F;MiyacoGBF.github.io&#x2F;mlgb&#x2F;2020-07-11_Only_Game_Sound&#x2F;Screenshot_OBS_mixer.png" width="80%" style="margin: 0 auto;" />
+</a>
+<div class="modal-wrapper" id="obs_mixer">
+  <a href="#!" class="modal-overlay"></a>
+  <div class="modal-window">
+    <div class="modal-content">
+      <img src="https:&#x2F;&#x2F;MiyacoGBF.github.io&#x2F;mlgb&#x2F;2020-07-11_Only_Game_Sound&#x2F;Screenshot_OBS_mixer.png" width="100%" />
+    </div>
+    <a href="#!" class="modal-close">×</a>
+  </div>
+</div>
+<p>Now you can stream/record only the game sound.
+Try to stream/record the game with any BGM or something.</p>
+<h2 id="optional-change-the-game-volume-independently">(Optional) Change the Game Volume Independently</h2>
+<p>In this method, you can change the volume of the game which you hear and which is streamed/recorded.</p>
+<p>In my thoughts, as audience can reduce the volume but cannot increase it, it's better to stream/record with the original volume and reduce the volume you hear.</p>
+<p>This is not difficult.
+Open <code>pavucontrol</code> with the game launched, then change the volume of &quot;Loopback from Monitor of Null Output&quot; in the &quot;Playback&quot; tab.
+If you want to mute the game sound you hear, simply mute this.</p>
+<h2 id="closing">Closing</h2>
+<p>This concludes the <code>pulseaudio</code>'s settings and streaming/recording sound settings of OBS.
+By changing input/output of <code>null sink</code>, this can be used for various use cases not only for game streaming/recording.
+Please try it.</p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://unix.stackexchange.com/questions/458044/route-applications-audio-output-to-multiple-playback-devices">pulseaudio - Route application's audio output to multiple playback devices - Unix &amp; Linux Stack Exchange</a></li>
+<li><a href="https://wiki.archlinux.org/index.php/PulseAudio">PulseAudio - ArchWiki</a></li>
+<li><a href="https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/Modules/">Modules - PulseAudio Documentation</a></li>
+</ul>
+
+    </div>
+
+    
+    
+      <div class="pagination">
+        <div class="pagination__title">
+          <span class="pagination__title-h">
+            Read other posts
+          </span>
+          <hr />
+        </div>
+        <div class="pagination__buttons">
+          
+          
+            <span class="button next">
+              <a href="https:&#x2F;&#x2F;MiyacoGBF.github.io&#x2F;mlgb&#x2F;specialk-bayonetta&#x2F;">
+                <span class="pagination__text">
+                  
+                    SpecialK Mod on Linux
+                  
+                </span>
+                <span class="pagination__icon">→</span>
+              </a>
+            </span>
+          
+        </div>
+      </div>
+    
+
+    
+    
+
+    <div class="pagination">
+  <div class="pagination__title">
+    <span class="pagination__title-h">
+      Comments
+    </span>
+    <hr />
+  </div>
+</div>
+
+<!-- discus autogenerated script -->
+<div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://miyacos-linux-gaming-blog.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  </div>
+
+      </div>
+
+      
+      <footer class="footer">
+        <div class="footer__inner">
+          
+  <a href="https:&#x2F;&#x2F;MiyacoGBF.github.io&#x2F;mlgb" class="logo" style="text-decoration: none;">
+    <span class="logo__mark">
+      <svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+        <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+      </svg>
+    </span>
+    <span class="logo__text">Miyaco&#x27;s Linux Gaming Blog</span>
+    
+      <span class="logo__cursor" style="background: #a9a9b3;"></span>
+    
+  </a>
+
+
+          <div class="copyright">
+            
+              
+            
+            <span>© 2020 Miyaco, Powered by 
+              <a href="https://www.getzola.org" target="_blank" rel="noopener">Zola</a>
+            </span>
+          </div>
+        </div>
+      </footer>
+
+      <script src="https:&#x2F;&#x2F;MiyacoGBF.github.io&#x2F;mlgb&#x2F;js&#x2F;main.js"></script>
+
+      
+
+    </div>
+  </body>
+</html>

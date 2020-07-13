@@ -16,7 +16,7 @@
 
     <title>
       
-  Miyaco&#x27;s Linux Gaming Blog - Articles in mod tag
+  Miyaco&#x27;s Linux Gaming Blog - Articles in pulseaudio tag
 
     </title>
 
@@ -109,12 +109,12 @@
   
     <div class="post on-list">
       <h1 class="post-title">
-        <a href="https:&#x2F;&#x2F;MiyacoGBF.github.io&#x2F;mlgb&#x2F;specialk-bayonetta&#x2F;">SpecialK Mod on Linux</a>
+        <a href="https:&#x2F;&#x2F;MiyacoGBF.github.io&#x2F;mlgb&#x2F;only-game-sound&#x2F;">Streaming/Recording Only Game Sound on Linux</a>
       </h1>
       <div class="post-meta">
         
           <span class="post-date">
-            2020-07-05
+            2020-07-11
           </span>
           
         
@@ -125,7 +125,7 @@
 
         
           <span class="post-read-time">
-            — 5min read
+            — 7min read
           </span>
         
       </div>
@@ -135,68 +135,9 @@
     
       <span class="post-tags">
         
-          #<a href="https:&#x2F;&#x2F;MiyacoGBF.github.io&#x2F;mlgb&#x2F;tags&#x2F;mod&#x2F;">mod</a>&nbsp;
+          #<a href="https:&#x2F;&#x2F;MiyacoGBF.github.io&#x2F;mlgb&#x2F;tags&#x2F;pulseaudio&#x2F;">pulseaudio</a>&nbsp;
         
-          #<a href="https:&#x2F;&#x2F;MiyacoGBF.github.io&#x2F;mlgb&#x2F;tags&#x2F;specialk&#x2F;">specialk</a>&nbsp;
-        
-      </span>
-    
-  
-
-
-      <div class="post-content">
-        
-          <h2 id="introduction">Introduction</h2>
-<p>I have tested SpecialK Mod on Linux for <a href="https://store.steampowered.com/app/460790/Bayonetta/">Bayonetta</a> and successfully unlocked FPS of this game.
-In this pose, I'd like to share how I installed SpecialK Mod on steam on linux.</p>
-<h3 id="links">Links</h3>
-<ul>
-<li><a href="https://github.com/Kaldaien/SpecialK/releases">SpecialK Mod</a></li>
-<li><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=933337066">An Unofficial Guild to SpecialK</a> (Steam Community)</li>
-</ul>
-
-        
-      </div>
-      <div><a class="read-more button" href="https:&#x2F;&#x2F;MiyacoGBF.github.io&#x2F;mlgb&#x2F;specialk-bayonetta&#x2F;">Read more →</a></div>
-    </div>
-  
-    <div class="post on-list">
-      <h1 class="post-title">
-        <a href="https:&#x2F;&#x2F;MiyacoGBF.github.io&#x2F;mlgb&#x2F;nier-automata-far&#x2F;">How to Install FAR, HD Texture Pack, and ReShade (GShade) for NieR:Automata on Linux</a>
-      </h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2020-02-09
-          </span>
-          
-            <span class="post-moddate">
-              (updated on 2020-07-05)
-            </span>
-          
-        
-
-        
-          <span class="post-author">— Written by Miyaco</span>
-        
-
-        
-          <span class="post-read-time">
-            — 6min read
-          </span>
-        
-      </div>
-
-      
-  
-    
-      <span class="post-tags">
-        
-          #<a href="https:&#x2F;&#x2F;MiyacoGBF.github.io&#x2F;mlgb&#x2F;tags&#x2F;mod&#x2F;">mod</a>&nbsp;
-        
-          #<a href="https:&#x2F;&#x2F;MiyacoGBF.github.io&#x2F;mlgb&#x2F;tags&#x2F;specialk&#x2F;">specialk</a>&nbsp;
-        
-          #<a href="https:&#x2F;&#x2F;MiyacoGBF.github.io&#x2F;mlgb&#x2F;tags&#x2F;nier-automata&#x2F;">nier_automata</a>&nbsp;
+          #<a href="https:&#x2F;&#x2F;MiyacoGBF.github.io&#x2F;mlgb&#x2F;tags&#x2F;sound&#x2F;">sound</a>&nbsp;
         
       </span>
     
@@ -206,19 +147,20 @@ In this pose, I'd like to share how I installed SpecialK Mod on steam on linux.<
       <div class="post-content">
         
           <h2 id="about">About</h2>
-<p>This guide is originally posted to <a href="https://gist.github.com/MiyacoGBF/6fd49ae4a73a9a7f4d13c488bff2da77">my gist</a>, but to create this new blog, moved from gist to this blog as the first post.
-Contents are almost same but a bit refined.
-Comments are still welcome!</p>
-<h3 id="links">Links</h3>
+<p>This is an English translation of <a href="https://miyacopl.hatenablog.com/entry/2019/06/16/182123">my Japanese blog post</a>, including some updates.</p>
+<h2 id="introduction">Introduction</h2>
+<p>When streaming or recording games, for example by <a href="https://obsproject.com/">OBS</a>, you may be listening to BGM or connecting to VC on discord (or something similar).
+In such a case, you may want to avoid BGM or VC sounds being streamed/recorded.
+In this post, I'll share the way how to configure linux sound system in such a case.</p>
+<p>The method written in this post enables the following things:</p>
 <ul>
-<li><a href="https://github.com/Kaldaien/FAR">FAR (Fix (NieR) Automata Resolution)</a> - Required by HD Texture Pack.</li>
-<li><a href="https://www.nexusmods.com/nierautomata/mods/5">HD Texture Pack</a></li>
-<li><a href="https://reshade.me/">ReShade</a></li>
+<li>Output game sounds to both OBS and your speaker (or headphone/headset)</li>
+<li>Independently change the volume of the game which OBS captures and which you hear</li>
 </ul>
 
         
       </div>
-      <div><a class="read-more button" href="https:&#x2F;&#x2F;MiyacoGBF.github.io&#x2F;mlgb&#x2F;nier-automata-far&#x2F;">Read more →</a></div>
+      <div><a class="read-more button" href="https:&#x2F;&#x2F;MiyacoGBF.github.io&#x2F;mlgb&#x2F;only-game-sound&#x2F;">Read more →</a></div>
     </div>
   
 
