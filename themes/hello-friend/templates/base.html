@@ -3,9 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    {% if config.extra.hello_friend_analytics_code %}
-      {{ config.extra.hello_friend_analytics_code | safe }}
-    {% endif %}
+    {% include 'shortcodes/prepended_head.html' %}
 
     <meta charset="utf-8">
 
@@ -34,6 +32,8 @@
 
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ get_url(path="img/apple-touch-icon-144-precomposed.png") }}">
     <link rel="shortcut icon" href="{{ get_url(path="img/favicon.png") }}">
+
+    {% include 'shortcodes/extended_head.html' %}
   </head>
 
   <body class="dark-theme">
@@ -101,6 +101,8 @@
       </footer>
 
       <script src="{{ get_url(path="js/main.js") }}"></script>
+
+      {% include "shortcodes/extra_scripts.html" %}
     </div>
   </body>
 </html>

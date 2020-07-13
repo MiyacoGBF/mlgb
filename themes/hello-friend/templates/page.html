@@ -97,18 +97,9 @@
     {% endif %}
 
     {% block comments %}
-      {% if config.extra.hello_friend_comment_code %}
-        <div class="pagination">
-          <div class="pagination__title">
-            <span class="pagination__title-h">
-              Comments
-            </span>
-            <hr />
-          </div>
-        </div>
-        {{ config.extra.hello_friend_comment_code | safe }}
-      {% endif %}
     {% endblock %}
+
+    {% include 'shortcodes/extended_page.html' %}
 
   </div>
 {% endblock %}

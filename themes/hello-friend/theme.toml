@@ -2,7 +2,7 @@ name = "Hello friend"
 description = "Ported from hugo-hello-friend theme"
 license = "MIT"
 homepage = ""
-min_version = "0.11.0"
+min_version = "0.12.0"
 demo = ""
 
 [extra]
