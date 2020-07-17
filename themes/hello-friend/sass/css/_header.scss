@@ -11,7 +11,7 @@
     flex-direction: row;
     align-items: center;
 
-    @media (--phone) {
+    @include mq-phone {
       flex-direction: row-reverse;
     }
   }

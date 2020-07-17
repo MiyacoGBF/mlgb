@@ -1,5 +1,3 @@
-@import 'mixins';
-
 .menu {
   --color: rgba(0, 0, 0, .12);
   --shadow: 0 8px 20px var(--color);
@@ -9,7 +7,7 @@
   padding-right: 24px;
   font-weight: 600;
 
-  @media (--phone) {
+  @include mq-phone {
     @include menu;
     border: none;
     top: 50px;
@@ -30,7 +28,7 @@
     padding: 0;
 
     &--desktop {
-      @media (--phone) {
+      @include mq-phone {
         display: none;
       }
     }
@@ -38,7 +36,7 @@
     &--mobile {
       display: none;
 
-      @media (--phone) {
+      @include mq-phone {
         display: block;
       }
     }
@@ -52,7 +50,7 @@
       }
     }
 
-    @media (--phone) {
+    @include mq-phone {
       flex-direction: column;
       align-items: flex-start;
       padding: 0;

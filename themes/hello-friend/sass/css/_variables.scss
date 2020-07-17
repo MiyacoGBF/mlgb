@@ -30,3 +30,16 @@ body.dark-theme {
 /*@media (--phone) {*/
   /*margin-top: 0;*/
 /*}*/
+
+/* SASS */
+@mixin mq-phone {
+  @media screen and (max-width: 684px) {
+    @content;
+  }
+}
+
+@mixin mq-tablet {
+  @media screen and (max-width: 900px) {
+    @content;
+  }
+}
